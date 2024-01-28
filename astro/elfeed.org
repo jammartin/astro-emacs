@@ -1,0 +1,15 @@
+#+title: Elfeed Configuration
+#+author: Johannes S: Martin
+#+email: jmartin@astrophysik.uni-kiel.de
+
+* Blogs                                                              :elfeed:
+** ArXiv                                                              :arxiv:
+*** [[http://export.arxiv.org/rss/astro-ph.EP][Earth and Planetary Astrophysics]]
+
+** Nature                                                            :nature:
+*** [[https://www.nature.com/subjects/astronomy-and-planetary-science.rss][Nature Astronomy]]
+
+
+
+
+   

@@ -1,0 +1,5 @@
+# emacs autosave files
+*~
+
+# temporary files created in grip-mode
+*.md.tmp
