@@ -22,7 +22,7 @@ If you renamed the folder `astro`, which is fine, you should change it to the co
 
 ## Additional Resources
 - [Introduction](https://lucidmanager.org/productivity/read-rss-feeds-with-emacs-and-elfeed/) by [Emacs Writing Studio](https://github.com/pprevos/emacs-writing-studio)
-- [Managing ArXiv RSS Feeds](https://cundy.me/post/elfeed/) *(not implemented yet)*
+- [Managing ArXiv RSS Feeds](https://cundy.me/post/elfeed/)
 
 
 
