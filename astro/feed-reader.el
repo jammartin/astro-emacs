@@ -12,8 +12,8 @@
   :custom
   (elfeed-db-directory
    (expand-file-name "elfeed" user-emacs-directory))
-  ;; "~/Nextcloud/elfeed-database") ;; Replacing the line above by a path in your cloud of choice allows for the
-                                    ;; use of the same database from different devices
+   ;;"~/Nextcloud/elfeed-database") ;; Replacing the line above by a path in your cloud of choice allows for the
+                                  ;; use of the same database from different devices
    (elfeed-show-entry-switch 'display-buffer)
   :bind
   ("C-c w" . elfeed))
@@ -107,6 +107,5 @@ concatenated."
 		    
 		    )
 
-;; set to start page
+;; launch elfeed on startup
 (elfeed)
-(setq initial-buffer-choice #'elfeed-search-buffer)

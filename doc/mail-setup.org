@@ -1,0 +1,62 @@
+#+title: Mail Setup
+#+author: Johannes S. Martin
+#+email: jmartin@astrophysik.uni-kiel.de
+
+* Setup Emacs as E-Mail Client
+
+*Requirements:* [[https://www.passwordstore.org/][pass]], [[https://wiki.archlinux.org/title/Isync][isync]], [[https://github.com/djcb/mu][mu]]
+
+** Getting your mail
+
+To safely store your mail account password(s), ~pass~ can be used along with ~gpg~.
+The following commands create a GPG key, show its ID, use it to init your password store
+and finally add your mail account passwort to the storage.
+#+BEGIN_SRC sh
+  gpg --gen-key
+  gpg --list-keys
+  pass --init <KEY_ID>
+  pass insert Email/<Mail-Account>
+#+END_SRC
+
+The configuration of your mail account for ~isync~ is done via a configuration file ~~/.mbsyncrc~.
+
+#+INCLUDE: "../conf/mail/.mbsyncrc" src sh
+
+After replacing the ~<Mail-Account>~ and ~<User>~ fields with your account information
+and creating the directory to store the mail you can sync your account.
+#+BEGIN_SRC sh
+  mkdir -p ~/.mail/<Mail-Account>
+  mbsync -a
+#+END_SRC
+
+As we don't want to sync main manually, a timer is created to automatically
+fetch and index your mail. 
+#+BEGIN_SRC sh
+  cp ~/git/astro-emacs/conf/mail/mbsync.service ~/.config/systemd/user/.
+  cp ~/git/astro-emacs/conf/mail/mbsync.timer ~/.config/systemd/user/.
+  systemctl --user enable mbsync.timer
+  systemctl --user start mbsync.timer
+#+END_SRC
+/Note:/ The service ~mbsync.service~ uses ~mu4e~ and ~emacsclient~ to index the mail databse,
+which will fail if the setup in the next section is not done yet. 
+
+** Manage your Mail in Emacs
+We start by initializing ~mu~ with our mail account.
+#+BEGIN_SRC sh
+mu init --maildir=~/.mail --my-address=<MAIL-ADDRESS>
+#+END_SRC
+
+
+
+
+
+** Resources
+- [[https://www.djcbsoftware.nl/code/mu/mu4e/][mu4e manual]]
+- [[https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key][Creating a GPG key]]
+- [[https://jherrlin.github.io/posts/emacs-mu4e/][Tutorial by jherrlin]]
+- [[https://wiki.archlinux.org/title/Isync][isync documentation]]
+- [[https://www.emacswiki.org/emacs/mu4e][Emacs Wiki entry for mu4e]]
+- [[https://cachestocaches.com/2017/3/complete-guide-email-emacs-using-mu-and/][Another guide]]
+  
+
+

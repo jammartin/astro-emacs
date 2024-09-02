@@ -1,0 +1,19 @@
+IMAPAccount <Mail-Account>
+Host <Host-Address>
+User <User>
+PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.password-store/Email/<Mail-Account>.gpg"
+SSLType IMAPS
+
+IMAPStore <Mail-Account>-remote
+Account <Mail-Account>
+
+MaildirStore <Mail-Account>-local
+Subfolders Verbatim
+Path ~/.mail/<Mail-Account>
+Inbox ~/.mail/<Mail-Account>/Inbox
+
+Channel <Mail-Account>
+Far :<Mail-Account>--remote:
+Near :<Mail-Account>-local:
+Create Both
+SyncState *
