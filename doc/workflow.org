@@ -1,0 +1,65 @@
+#+title: Workflow
+#+author: Johannes S. Martin
+#+email: jmartin@astrophysik.uni-kiel.de
+
+* Vanilla Emacs Workflow
+
+** Basic Keybindings
+
+Emacs offers a well though of [[https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf][set of keybindings]] out of the box, which is usually referred to as "Vanilla Emacs".
+Although I am using Emacs as editor for everything, I only know the following keybindings by heart,
+which are sufficient to get me through most of my everyday tasks.
+For everyone who is completely new to Emacs:
+- ~C~ denotes the control key (~ctrl~ by default)
+- ~M~ denotes the meta key (~alt~ by default)
+- Files (and other data) are opened in buffers
+- Windows are used to display buffers
+- Frames host one or more windows (which is referred to as "windows" commonly for other programs)
+Finally, pay attention to the minibuffer (command line in the bottom left of your Emacs frame)
+to keep track what you're doing.
+
+| Command                          | Action during command | Keybinding |
+|----------------------------------+-----------------------+------------|
+| Open file                        |                       | ~C-x C-f~  |
+| Save file                        |                       | ~C-x C-s~  |
+|----------------------------------+-----------------------+------------|
+| Switch buffer                    |                       | ~C-x b~    |
+| Kill buffer                      |                       | ~C-x k~    |
+|----------------------------------+-----------------------+------------|
+| Jump to start of line            |                       | ~C-a~      |
+| Jump to end of line              |                       | ~C-e~      |
+| Scroll page down                 |                       | ~C-v~      |
+| Scroll page up                   |                       | ~M-v~      |
+|----------------------------------+-----------------------+------------|
+| Select text                      |                       | ~C-SPC~    |
+| Cut                              |                       | ~C-w~      |
+| Copy                             |                       | ~M-w~      |
+| Paste                            |                       | ~C-y~      |
+|----------------------------------+-----------------------+------------|
+| Split window vertically          |                       | ~C-x 3~    |
+| Split window horizontally        |                       | ~C-x 2~    |
+| Close window                     |                       | ~C-x 0~    |
+| Close other windows than current |                       | ~C-x 1~    |
+| Switch to other window           | Next other window     | ~C-x o~    |
+|----------------------------------+-----------------------+------------|
+| Search                           | Next match            | ~C-s~      |
+| Search backwards                 | Previous match        | ~C-r~      |
+| Search and replace:              |                       | ~M-%~      |
+|                                  | Replace and next      | ~SPC~      |
+|                                  | Skip                  | ~DEL~      |
+|----------------------------------+-----------------------+------------|
+| Execute command                  |                       | ~M-x~      |
+|                                  | Autocomplete          | ~TAB~      |
+| Cancel command                   |                       | ~C-g~      |
+|----------------------------------+-----------------------+------------|
+
+
+
+
+
+
+
+
+  
+
+
